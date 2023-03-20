@@ -4,7 +4,7 @@ import { Body } from '@nestjs/common/decorators';
 
 @Controller('/usuarios')
 export class UsuarioController {
-  private usuarioRepository = new UsuarioRepository();
+  constructor(private usuarioRepository: UsuarioRepository) {}
 
   @Post()
   async criaUsuario(@Body() dadosDoUsuario) {
